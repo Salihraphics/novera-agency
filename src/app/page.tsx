@@ -1,65 +1,188 @@
-import Image from "next/image";
+'use client';
+
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="bg-white dark:bg-slate-950">
+      {/* Hero Section */}
+      <section className="min-h-[calc(50vh-40px)] flex items-center justify-center px-4 py-20 relative overflow-hidden bg-gradient-to-br from-white via-purple-50/30 to-pink-50/20 dark:from-slate-900 dark:via-purple-950/10 dark:to-slate-900">
+        <div className="container max-w-4xl mx-auto text-center relative z-10">
+          <h1 className="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
+            Markanızı Dijital Dünyada{' '}
+            <span className="gradient-text dark:gradient-text-dark">
+              Güçlü Kılın
+            </span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          
+          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Novera Agency, markaların dijital dünyada başarılı olması için web tasarım, sosyal medya yönetimi ve dijital pazarlama hizmetleri sunuyoruz.
           </p>
+          
+          <div className="flex flex-row gap-4 justify-center mb-4 flex-wrap">
+            <Link 
+              href="/services" 
+              className="px-10 py-3.5 bg-gradient-accent text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 whitespace-nowrap text-base"
+            >
+              Hizmetleri Keşfet
+            </Link>
+            <Link 
+              href="/contact" 
+              className="px-10 py-3.5 border-2 border-purple-600 text-purple-600 dark:text-purple-400 dark:border-purple-400 font-semibold rounded-lg hover:bg-purple-50 dark:hover:bg-purple-950/30 transition-all duration-300 whitespace-nowrap text-base"
+            >
+              Bize Ulaşın
+            </Link>
+          </div>
+
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Services Preview Section */}
+      <section className="bg-slate-50 dark:bg-slate-900/50 py-section">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+              Sunduğumuz Hizmetler
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+              Dijital dönüşüm yolculuğunuzda yanınızda olmak için kapsamlı bir hizmet yelpazesi sunuyoruz.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Service Card 1 */}
+            <div className="card group">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="text-4xl flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">🌐</div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                  Web Tasarım
+                </h3>
+              </div>
+              <p className="text-slate-600 dark:text-slate-400 mb-6 line-clamp-3">
+                Modern, responsive ve kullanıcı dostu web siteleri tasarladığımız ve geliştiriyoruz.
+              </p>
+              <Link
+                href="/services"
+                className="text-purple-600 dark:text-purple-400 font-semibold hover:text-purple-700 dark:hover:text-purple-300 transition-colors inline-flex items-center gap-2"
+              >
+                Detaylı Bilgi →
+              </Link>
+            </div>
+
+            {/* Service Card 2 */}
+            <div className="card group">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="text-4xl flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">📱</div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                  Sosyal Medya
+                </h3>
+              </div>
+              <p className="text-slate-600 dark:text-slate-400 mb-6 line-clamp-3">
+                Instagram ve Facebook hesaplarının kurulumu ve profesyonel yönetimi hizmeti veriyoruz.
+              </p>
+              <Link
+                href="/services"
+                className="text-purple-600 dark:text-purple-400 font-semibold hover:text-purple-700 dark:hover:text-purple-300 transition-colors inline-flex items-center gap-2"
+              >
+                Detaylı Bilgi →
+              </Link>
+            </div>
+
+            {/* Service Card 3 */}
+            <div className="card group">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="text-4xl flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">🎬</div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                  Video Düzenleme
+                </h3>
+              </div>
+              <p className="text-slate-600 dark:text-slate-400 mb-6 line-clamp-3">
+                Reels, Shorts ve reklam videoları düzenleyerek marka görünürlüğünü artırıyoruz.
+              </p>
+              <Link
+                href="/services"
+                className="text-purple-600 dark:text-purple-400 font-semibold hover:text-purple-700 dark:hover:text-purple-300 transition-colors inline-flex items-center gap-2"
+              >
+                Detaylı Bilgi →
+              </Link>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/services" className="btn-primary inline-block">
+              Tüm Hizmetleri Gör
+            </Link>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-section">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+              Neden Bizi Seçmelisiniz?
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                icon: '✓',
+                title: 'Profesyonel Ekip',
+                description: 'Deneyimli tasarımcı ve geliştirici ekibimiz, projenizi başarıya götürmek için çalışıyor.',
+              },
+              {
+                icon: '💰',
+                title: 'Uygun Fiyatlandırma',
+                description: 'Küçük işletmeler ve startuplar için uygun paket seçenekleri sunuyoruz.',
+              },
+              {
+                icon: '📊',
+                title: 'Sonuç Odaklı',
+                description: 'Dijital büyüme ve measurable sonuçlara odaklanarak stratejiler geliştiriyoruz.',
+              },
+              {
+                icon: '🤝',
+                title: 'Uzun Vadeli İlişki',
+                description: 'Müşterilerimizle uzun vadeli ortaklıklar kurmak ve birlikte büyümek istiyoruz.',
+              },
+            ].map((item, index) => (
+              <div key={index} className="card flex gap-6">
+                <div className="text-4xl font-bold text-purple-600 dark:text-purple-400 flex-shrink-0">
+                  {item.icon}
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-12">
+        <div className="container mx-auto max-w-4xl text-center">
+          <div className="card border-2 border-purple-200 dark:border-purple-800">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+              Projenizi Başlatmaya Hazırız
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-400 mb-8">
+              Markanızın dijital yolculuğunu birlikte başlatalım. İlk görüşmemiz tamamen ücretsiz.
+            </p>
+            <Link href="/contact" className="btn-primary inline-block">
+              Şimdi İletişime Geçin
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
+
