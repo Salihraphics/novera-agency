@@ -10,7 +10,7 @@ export default function Packages() {
       icon: '🔹',
       name: 'BAŞLANGIÇ PAKETİ',
       subtitle: 'Yeni markalar ve solo girişimciler için',
-      tagline: 'Online\'da profesyonel bir duruş inşa ediyoruz.',
+      tagline: "Online'da profesyonel bir duruş inşa ediyoruz.",
       setupPrice: '₺12.500',
       monthlyPrice: '₺6.000',
       setupLabel: 'Tek seferlik kurulum',
@@ -130,7 +130,7 @@ export default function Packages() {
                   </p>
 
                   {/* Price */}
-                  <div className="mb-8 pb-8 border-b" style={{borderColor: pkg.highlighted ? 'rgba(255,255,255,0.2)' : ''}}>
+                  <div className="mb-8 pb-8 border-b" style={{ borderColor: pkg.highlighted ? 'rgba(255,255,255,0.2)' : '' }}>
                     <div className="space-y-2">
                       <div>
                         <p className={`text-xs font-semibold mb-1 ${pkg.highlighted ? 'text-white' : 'text-slate-600'}`}>
@@ -155,48 +155,24 @@ export default function Packages() {
                     <ul className="space-y-2">
                       {pkg.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start gap-3">
-                          <span className={`mt-0.5 flex-shrink-0 ${pkg.highlighted ? 'text-white' : 'text-purple-600'}`}>
-                            ✓
-                          </span>
-                          <span className={`text-sm ${pkg.highlighted ? 'text-white/95' : 'text-slate-700'}`}>
-                            {feature}
-                          </span>
+                          <span className={`mt-0.5 flex-shrink-0 ${pkg.highlighted ? 'text-white' : 'text-purple-600'}`}>✓</span>
+                          <span className={`text-sm ${pkg.highlighted ? 'text-white/95' : 'text-slate-700'}`}>{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  {/* Excluded (if any) */}
-                  {pkg.excluded && pkg.excluded.length > 0 && (
-                    <div className="mb-6 pb-6 border-b" style={{borderColor: pkg.highlighted ? 'rgba(255,255,255,0.2)' : 'rgb(226, 232, 240)'}}>
+                  {/* Excluded */}
+                  {pkg.excluded.length > 0 && (
+                    <div className="mb-6 pb-6 border-b" style={{ borderColor: pkg.highlighted ? 'rgba(255,255,255,0.2)' : 'rgb(226, 232, 240)' }}>
                       <h4 className={`text-xs font-bold mb-2 uppercase tracking-widest ${pkg.highlighted ? 'text-white/80' : 'text-slate-500'}`}>
                         Dahil değil:
                       </h4>
                       <ul className="space-y-1">
                         {pkg.excluded.map((item, idx) => (
                           <li key={idx} className="flex items-start gap-3">
-                            <span className={`mt-0.5 flex-shrink-0 ${pkg.highlighted ? 'text-white/60' : 'text-slate-400'}`}>
-                              ✗
-                            </span>
-                            <span className={`text-sm ${pkg.highlighted ? 'text-white/70' : 'text-slate-500'}`}>
-                              {item}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  {/* Optional (if any) */}
-                  {pkg.optional && (
-                    <div className="mb-6 pb-6 border-b" style={{borderColor: pkg.highlighted ? 'rgba(255,255,255,0.2)' : 'rgb(226, 232, 240)'}}>
-                      <h4 className={`text-xs font-bold mb-2 uppercase tracking-widest ${pkg.highlighted ? 'text-white/80' : 'text-slate-500'}`}>
-                        Opsiyonel:
-                      </h4>
-                      <ul className="space-y-1">
-                        {pkg.optional.map((item, idx) => (
-                          <li key={idx} className={`text-sm ${pkg.highlighted ? 'text-white/80' : 'text-slate-600'}`}>
-                            • {item}
+                            <span className={`mt-0.5 flex-shrink-0 ${pkg.highlighted ? 'text-white/60' : 'text-slate-400'}`}>✗</span>
+                            <span className={`text-sm ${pkg.highlighted ? 'text-white/70' : 'text-slate-500'}`}>{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -222,42 +198,25 @@ export default function Packages() {
         </div>
       </section>
 
-      {/* Package Quiz Section */}
+      {/* Package Quiz */}
       <PackageQuiz />
 
-      {/* FAQ Section */}
+      {/* FAQ */}
       <section className="py-section">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-900 dark:text-white mb-12">
             Sık Sorulan Sorular
           </h2>
-
           <div className="space-y-4">
             {[
-              {
-                title: 'Çalışma süreci nasıl ilerliyor?',
-                answer: 'İlk görüşmede ihtiyaçlarınızı netleştiriyoruz. Ardından size özel bir yol haritası çıkarıyoruz ve onay sonrası çalışmaya başlıyoruz. Süreç boyunca şeffaf ilerliyor, her aşamada bilgilendirme yapıyoruz.',
-              },
-              {
-                title: 'Paketler sabit mi, özelleştirilebilir mi?',
-                answer: 'Paketler bir başlangıç çerçevesidir. İhtiyacınıza göre içerik eklenip çıkarılabilir. Gereksiz hizmet satmayız, sadece gerçekten işinize yarayacak çözümleri sunarız.',
-              },
-              {
-                title: 'Çalışma süresi ve teslim zamanları ne kadar?',
-                answer: 'Projenin kapsamına göre değişir. Küçük ölçekli işler kısa sürede tamamlanırken, daha kapsamlı projeler planlı şekilde aşama aşama ilerler. Net teslim süresi proje başında belirlenir.',
-              },
-              {
-                title: 'Çalışmaya başladıktan sonra ek talepler olursa ne olur?',
-                answer: 'Paket kapsamındaki düzenlemeler ücretsiz olarak yapılır. Paket dışı talepler için ise işin kapsamına göre ek planlama ve fiyatlandırma uygulanır.',
-              },
+              { title: 'Çalışma süreci nasıl ilerliyor?', answer: 'İlk görüşmede ihtiyaçlarınızı netleştiriyoruz. Ardından size özel bir yol haritası çıkarıyoruz ve onay sonrası çalışmaya başlıyoruz. Süreç boyunca şeffaf ilerliyor, her aşamada bilgilendirme yapıyoruz.' },
+              { title: 'Paketler sabit mi, özelleştirilebilir mi?', answer: 'Paketler bir başlangıç çerçevesidir. İhtiyacınıza göre içerik eklenip çıkarılabilir. Gereksiz hizmet satmayız, sadece gerçekten işinize yarayacak çözümleri sunarız.' },
+              { title: 'Çalışma süresi ve teslim zamanları ne kadar?', answer: 'Projenin kapsamına göre değişir. Küçük ölçekli işler kısa sürede tamamlanırken, daha kapsamlı projeler planlı şekilde aşama aşama ilerler. Net teslim süresi proje başında belirlenir.' },
+              { title: 'Çalışmaya başladıktan sonra ek talepler olursa ne olur?', answer: 'Paket kapsamındaki düzenlemeler ücretsiz olarak yapılır. Paket dışı talepler için ise işin kapsamına göre ek planlama ve fiyatlandırma uygulanır.' },
             ].map((faq, idx) => (
               <div key={idx} className="card">
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3">
-                  {faq.title}
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400">
-                  {faq.answer}
-                </p>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3">{faq.title}</h3>
+                <p className="text-slate-600 dark:text-slate-400">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -266,4 +225,3 @@ export default function Packages() {
     </div>
   );
 }
-
