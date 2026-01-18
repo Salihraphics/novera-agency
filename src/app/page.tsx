@@ -11,7 +11,7 @@ export default function Home() {
           <h1 className="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
             Markanızı Dijital Dünyada{' '}
             <span className="gradient-text dark:gradient-text-dark">
-              Güçlü Kılın
+              Güçlü Kılına
             </span>
           </h1>
           
