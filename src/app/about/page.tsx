@@ -1,7 +1,5 @@
 'use client';
 
-import Link from 'next/link';
-
 export default function About() {
   const principles = [
     { icon: '✨', title: 'Sadelik', description: 'Karmaşık şeyler basit bir şekilde anlatıyoruz. Müşterilerimiz her zaman neler yapıldığını, neden yapıldığını ve nasıl yardımcı olduğunu bilirler.' },

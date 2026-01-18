@@ -37,11 +37,11 @@ export default function Contact() {
       // 2. Form field'larının entry ID'lerini Google Forms'dan alın
       // inspect et: name="entry.XXXXXXXXXXXX" şeklinde görünür
       const FORM_FIELDS = {
-        name: 'entry.1234567890', // Değiştir
-        email: 'entry.1234567891', // Değiştir
-        phone: 'entry.1234567892', // Değiştir
-        subject: 'entry.1234567893', // Değiştir
-        message: 'entry.1234567894', // Değiştir
+        name: 'entry.896911165', // Değiştir
+        email: '465150225', // Değiştir
+        phone: 'entry.1674288077', // Değiştir
+        subject: 'entry.741704942', // Değiştir
+        message: 'entry.1760568013', // Değiştir
       };
 
       // Google Forms'a veri gönder
