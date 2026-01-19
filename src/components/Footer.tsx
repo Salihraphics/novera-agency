@@ -21,10 +21,10 @@ export function Footer() {
   };
 
   const socialLinks = [
-    { icon: 'f', label: 'Facebook', href: '#' },
-    { icon: 'in', label: 'LinkedIn', href: '#' },
-    { icon: 'ig', label: 'Instagram', href: '#' },
-    { icon: 'tw', label: 'Twitter', href: '#' },
+    { icon: 'in', label: 'LinkedIn', href: 'https://www.linkedin.com/in/novera-agency' },
+    { icon: 'ig', label: 'Instagram', href: 'https://www.instagram.com/novera_agency_?igsh=eXFqazljZHdpNXk0' },
+    { icon: 'tw', label: 'Twitter/X', href: 'https://x.com/NoveraAgency' },
+    { icon: 'yt', label: 'YouTube', href: 'https://www.youtube.com/@NoveraAgency' },
   ];
 
   return (
@@ -95,6 +95,8 @@ export function Footer() {
                   <a
                     key={`${link.label}-${index}`}
                     href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     title={link.label}
                     className="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 hover:border-purple-500 hover:bg-gradient-accent flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300 font-semibold text-xs hover:shadow-lg hover:scale-110"
                   >

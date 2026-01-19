@@ -36,6 +36,7 @@ export default function RootLayout({
     <html lang="tr" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="https://tally.so/widgets/embed.js" async></script>
       </head>
       <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />
