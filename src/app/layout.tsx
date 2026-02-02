@@ -42,9 +42,9 @@ export default function RootLayout({
         <Header />
         <main className="pt-20">
           {children}
-          <SpeedInsights />
         </main>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
