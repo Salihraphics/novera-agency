@@ -16,30 +16,51 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    // Kullanıcının tema tercihini localStorage'dan al
+    // DOM'dan mevcut dark class'ını kontrol et
+    const isDark = document.documentElement.classList.contains('dark');
     const savedTheme = localStorage.getItem('theme') as Theme | null;
     
+    let initialTheme: Theme;
+    
     if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+      initialTheme = savedTheme;
     } else {
-      // Default olarak light tema, sistem tercihi dark ise dark yap
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const initialTheme = prefersDark ? 'dark' : 'light';
-      setTheme(initialTheme);
-      document.documentElement.classList.toggle('dark', initialTheme === 'dark');
+      initialTheme = prefersDark ? 'dark' : 'light';
     }
+    
+    setTheme(initialTheme);
+    
+    // HTML'e dark class'ını ekle veya çıkar
+    if (initialTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    
+    localStorage.setItem('theme', initialTheme);
+    setMounted(true);
   }, []);
 
   const toggleTheme = () => {
     setTheme((prevTheme) => {
       const newTheme = prevTheme === 'light' ? 'dark' : 'light';
+      
+      // HTML'e class ekle/çıkar
+      if (newTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      
       localStorage.setItem('theme', newTheme);
-      document.documentElement.classList.toggle('dark', newTheme === 'dark');
       return newTheme;
     });
   };
+
+  if (!mounted) {
+    return <>{children}</>;
+  }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
