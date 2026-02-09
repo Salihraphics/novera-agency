@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @layer base {
+  /* ============================================
+     LIGHT THEME (DEFAULT)
+     ============================================ */
   :root {
     --accent: #7c3aed;
     --accent-2: #6d28d9;
@@ -11,19 +14,6 @@
     --card-bg: rgba(255,255,255,0.95);
     --card-border: rgba(124,58,237,0.1);
     --glass: rgba(255,255,255,0.08);
-  }
-
-  html.dark {
-    --accent: #a78bfa;
-    --accent-2: #c4b5fd;
-    --secondary: #f472b6;
-    --bg: #0a0a0a;
-    --text: #f1f5f9;
-    --text-secondary: #cbd5e1;
-    --muted: #94a3b8;
-    --card-bg: rgba(20,20,25,0.8);
-    --card-border: rgba(167,139,250,0.15);
-    --glass: rgba(0,0,0,0.5);
   }
 
   * {
@@ -50,15 +40,6 @@
     background-attachment: fixed;
   }
 
-  html.dark body {
-    background-color: #0a0a0a;
-    color: #f1f5f9;
-    background-image: 
-      linear-gradient(135deg, rgba(167, 139, 250, 0.03) 0%, transparent 25%),
-      linear-gradient(225deg, rgba(244, 114, 182, 0.03) 0%, transparent 25%);
-    background-attachment: fixed;
-  }
-
   body::before {
     content: "";
     position: fixed;
@@ -68,6 +49,31 @@
     background-size: 4px 4px;
     opacity: 0.03;
     transform: translateZ(0);
+  }
+
+  /* ============================================
+     DARK THEME
+     ============================================ */
+  html.dark {
+    --accent: #a78bfa;
+    --accent-2: #c4b5fd;
+    --secondary: #f472b6;
+    --bg: #0a0a0a;
+    --text: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --muted: #94a3b8;
+    --card-bg: rgba(20,20,25,0.8);
+    --card-border: rgba(167,139,250,0.15);
+    --glass: rgba(0,0,0,0.5);
+  }
+
+  html.dark body {
+    background-color: #0a0a0a;
+    color: #f1f5f9;
+    background-image: 
+      linear-gradient(135deg, rgba(167, 139, 250, 0.03) 0%, transparent 25%),
+      linear-gradient(225deg, rgba(244, 114, 182, 0.03) 0%, transparent 25%);
+    background-attachment: fixed;
   }
 
   html.dark body::before {
@@ -80,6 +86,11 @@
     font-size: 3.75rem;
     letter-spacing: -1px;
     font-weight: 800;
+    color: #0f172a;
+  }
+
+  html.dark h1 {
+    color: #f1f5f9;
   }
 
   @media (max-width: 768px) {
@@ -92,6 +103,11 @@
     font-size: 2.75rem;
     letter-spacing: -0.5px;
     font-weight: 700;
+    color: #0f172a;
+  }
+
+  html.dark h2 {
+    color: #f1f5f9;
   }
 
   @media (max-width: 768px) {
@@ -103,6 +119,11 @@
   h3 {
     font-size: 1.5rem;
     font-weight: 700;
+    color: #0f172a;
+  }
+
+  html.dark h3 {
+    color: #f1f5f9;
   }
 
   @media (max-width: 768px) {
@@ -114,16 +135,21 @@
   h4 {
     font-size: 1.125rem;
     font-weight: 600;
+    color: #0f172a;
+  }
+
+  html.dark h4 {
+    color: #f1f5f9;
   }
 
   p {
     margin-bottom: 1rem;
-    color: var(--muted);
+    color: #64748b;
     line-height: 1.7;
   }
 
   html.dark p {
-    color: var(--muted);
+    color: #cbd5e1;
   }
 
   a {
