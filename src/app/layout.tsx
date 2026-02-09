@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ThemeProvider } from "@/providers/ThemeProvider";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = Geist({
@@ -39,12 +40,14 @@ export default function RootLayout({
         <script src="https://tally.so/widgets/embed.js" async></script>
       </head>
       <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Header />
-        <main className="pt-20">
-          {children}
-          <SpeedInsights />
-        </main>
-        <Footer />
+        <ThemeProvider>
+          <Header />
+          <main className="pt-20">
+            {children}
+            <SpeedInsights />
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

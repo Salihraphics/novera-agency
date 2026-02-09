@@ -94,7 +94,7 @@ export default function Packages() {
       </section>
 
       {/* Packages Grid */}
-      <section className="py-section bg-slate-50">
+      <section className="py-section bg-slate-50 dark:bg-slate-900/30">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {packages.map((pkg) => (
@@ -103,11 +103,11 @@ export default function Packages() {
                 className={`relative rounded-2xl overflow-hidden transition-all duration-300 flex flex-col h-full ${
                   pkg.highlighted
                     ? 'bg-gradient-accent text-white scale-105 shadow-2xl'
-                    : 'bg-white border border-slate-200 text-slate-900 hover:shadow-lg'
+                    : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white hover:shadow-lg'
                 }`}
               >
                 {pkg.badge && (
-                  <div className="absolute top-0 right-0 bg-white text-purple-600 px-4 py-2 rounded-bl-2xl text-sm font-bold">
+                  <div className="absolute top-0 right-0 bg-white dark:bg-slate-900 text-purple-600 dark:text-purple-400 px-4 py-2 rounded-bl-2xl text-sm font-bold">
                     {pkg.badge}
                   </div>
                 )}

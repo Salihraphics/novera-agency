@@ -161,7 +161,7 @@ export function PackageQuiz() {
   const question = questions[currentQuestion];
 
   return (
-    <section className="py-section bg-slate-50">
+    <section className="py-section bg-slate-50 dark:bg-slate-900/30">
       <div className="container mx-auto max-w-2xl px-4">
         <div className="mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
@@ -172,7 +172,7 @@ export function PackageQuiz() {
           </p>
 
           {/* Progress Bar */}
-          <div className="w-full bg-slate-200 rounded-full h-2 overflow-hidden">
+          <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2 overflow-hidden">
             <div
               className="bg-gradient-accent h-full transition-all duration-300"
               style={{ width: `${progress}%` }}
@@ -184,7 +184,7 @@ export function PackageQuiz() {
         </div>
 
         {/* Question Card */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-lg p-8 mb-8">
           <h3 className="text-2xl font-bold text-slate-900 mb-6">
             {question.text}
           </h3>
@@ -199,8 +199,8 @@ export function PackageQuiz() {
                 }}
                 className={`w-full p-4 rounded-lg border-2 transition-all duration-200 text-left font-medium ${
                   selectedAnswer === index
-                    ? 'border-purple-600 bg-purple-50'
-                    : 'border-slate-200 bg-slate-50 hover:border-purple-400'
+                    ? 'border-purple-600 dark:border-purple-400 bg-purple-50 dark:bg-purple-950/30'
+                    : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:border-purple-400'
                 }`}
               >
                 {option.text}
